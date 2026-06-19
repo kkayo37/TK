@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TK Caetano Veículos — Seminovos selecionados, procedência garantida e as melhores condições. Seu próximo carro está aqui.">
+  <meta name="keywords" content="seminovos, carros, revenda, veículos, TK Caetano, Goiânia, financiamento, seminovos garantidos">
+  <meta property="og:title" content="TK Caetano Veículos | Seminovos de Qualidade">
+  <meta property="og:description" content="Seminovos selecionados, procedência garantida e as melhores condições.">
+  <title>TK Caetano Veículos | Seminovos de Qualidade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --black:#0A0A0A;--black-light:#151515;--black-mid:#1F1F1F;
+      --red:#DC2626;--red-light:#EF4444;--red-dark:#B91C1C;
+      --white:#FFFFFF;--white-dim:rgba(255,255,255,0.7);--white-sub:rgba(255,255,255,0.45);
+      --gray:#999;--gray-dark:#555;--gray-darker:#333;
+      --silver:#C0C0C0;--silver-dim:rgba(192,192,192,0.08);
+      --gradient-red:linear-gradient(135deg,var(--red),var(--red-light));
+      --shadow-red:0 4px 24px rgba(220,38,38,0.25);
+      --shadow-xl:0 20px 50px rgba(0,0,0,0.4);
+      --transition:0.3s cubic-bezier(0.4,0,0.2,1);
+      --transition-slow:0.5s cubic-bezier(0.4,0,0.2,1);
+      --radius:12px;--radius-lg:16px;--radius-xl:20px;
+    }
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:'Inter',sans-serif;background:var(--black);color:var(--white);line-height:1.6;overflow-x:hidden}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+    @media(min-width:768px){.container{padding:0 48px}}
+    .red-text{background:var(--gradient-red);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .section-tag{display:inline-block;padding:6px 18px;border-radius:100px;font-size:.73rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red-light);border:1px solid rgba(220,38,38,0.2);margin-bottom:20px}
+    .section-header{text-align:center;max-width:650px;margin:0 auto 56px}
+    .section-header h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400;letter-spacing:.03em;line-height:1.1;margin-bottom:14px}
+    .section-header p{font-size:1rem;color:var(--gray);line-height:1.7}
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 34px;border-radius:8px;font-size:.95rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:var(--transition);letter-spacing:.01em}
+    .btn-red{background:var(--gradient-red);color:var(--white);box-shadow:var(--shadow-red)}
+    .btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(220,38,38,0.4)}
+    .btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.2)}
+    .btn-outline:hover{border-color:var(--red);color:var(--red);background:rgba(220,38,38,0.04);transform:translateY(-2px)}
+    .btn-wa{background:#25D366;color:var(--white);box-shadow:0 4px 20px rgba(37,211,102,0.3)}
+    .btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.45)}
+    .btn-sm{padding:10px 20px;font-size:.85rem}
+
+    /* Navbar */
+    .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:var(--transition)}
+    .navbar.scrolled{background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:12px 0;border-bottom:1px solid rgba(220,38,38,0.06)}
+    .navbar-inner{display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logo-shield{width:42px;height:42px;border-radius:8px;background:var(--gradient-red);display:flex;align-items:center;justify-content:center;position:relative}
+    .logo-shield svg{width:22px;height:22px;color:var(--white)}
+    .logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--white);letter-spacing:.03em}
+    .logo-text strong{color:var(--red-light);font-weight:400}
+    .nav-links{display:none;list-style:none;gap:6px}
+    @media(min-width:1024px){.nav-links{display:flex}}
+    .nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:.87rem;font-weight:500;padding:8px 16px;border-radius:6px;transition:var(--transition)}
+    .nav-links a:hover{color:var(--red-light);background:rgba(220,38,38,0.05)}
+    .nav-cta{display:none;padding:10px 22px;background:var(--gradient-red);color:var(--white);text-decoration:none;border-radius:6px;font-size:.87rem;font-weight:700;transition:var(--transition)}
+    @media(min-width:1024px){.nav-cta{display:inline-flex}}
+    .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(220,38,38,0.35)}
+    .menu-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+    @media(min-width:1024px){.menu-toggle{display:none}}
+    .menu-toggle span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:var(--transition)}
+    .menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .menu-toggle.active span:nth-child(2){opacity:0}
+    .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(10,10,10,0.98);backdrop-filter:blur(20px);padding:24px;gap:4px;border-bottom:1px solid rgba(220,38,38,0.05)}
+
+    /* Hero */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;pointer-events:none}
+    .hero-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 30% 40%,rgba(220,38,38,0.07) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 80% 70%,rgba(220,38,38,0.04) 0%,transparent 60%)}
+    .hero-bg .grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.012) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at 40% 40%,black 18%,transparent 60%);-webkit-mask-image:radial-gradient(ellipse at 40% 40%,black 18%,transparent 60%)}
+    .hero-orb{position:absolute;border-radius:50%;filter:blur(120px)}
+    .hero-orb-1{width:550px;height:550px;background:rgba(220,38,38,0.07);top:-10%;left:-10%;animation:orbFloat 12s ease-in-out infinite}
+    .hero-orb-2{width:350px;height:350px;background:rgba(220,38,38,0.04);bottom:5%;right:-5%;animation:orbFloat 12s ease-in-out infinite 6s}
+    @keyframes orbFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-25px)}}
+    .hero-content{position:relative;z-index:2;display:grid;gap:48px;align-items:center}
+    @media(min-width:1024px){.hero-content{grid-template-columns:1fr 1fr;gap:80px}}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.18);color:var(--red-light);font-size:.8rem;font-weight:600;margin-bottom:20px}
+    .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+    .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:1;margin-bottom:20px;letter-spacing:.02em}
+    .hero p{font-size:clamp(.95rem,1.5vw,1.15rem);color:var(--gray);line-height:1.7;margin-bottom:36px;max-width:500px}
+    .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+    .hero-stats{display:flex;gap:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.05)}
+    @media(max-width:639px){.hero-stats{flex-direction:column;gap:14px}}
+    .hero-stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--red-light)}
+    .hero-stat-label{font-size:.76rem;color:var(--gray);margin-top:2px}
+    .hero-stat-div{width:1px;background:rgba(255,255,255,0.05);align-self:stretch}
+    @media(max-width:639px){.hero-stat-div{width:50px;height:1px}}
+
+    /* Hero visual */
+    .hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+    .hero-car-placeholder{position:relative;width:100%;max-width:500px;aspect-ratio:16/10;border-radius:var(--radius-xl);overflow:hidden;background:linear-gradient(145deg,var(--black-light),var(--black-mid));border:1px solid rgba(220,38,38,0.06)}
+    .hero-car-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(ellipse at 40% 50%,rgba(220,38,38,0.05) 0%,transparent 70%)}
+    .hero-car-inner svg{width:72px;height:72px;color:var(--red);opacity:.2}
+    .hero-car-inner span{font-size:.78rem;color:var(--gray);opacity:.35;font-weight:500;text-transform:uppercase;letter-spacing:.08em}
+    .hero-float{position:absolute;padding:14px 18px;border-radius:12px;background:rgba(21,21,21,0.95);backdrop-filter:blur(10px);border:1px solid rgba(220,38,38,0.08);box-shadow:var(--shadow-xl);animation:floatCard 5s ease-in-out infinite;z-index:5;display:flex;align-items:center;gap:12px}
+    .hero-float-1{top:10%;right:-15px}
+    .hero-float-2{bottom:15%;left:-15px;animation-delay:2.5s}
+    @media(max-width:1023px){.hero-float{display:none}}
+    @keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .hero-float-icon{width:38px;height:38px;border-radius:8px;background:rgba(220,38,38,0.1);display:flex;align-items:center;justify-content:center;color:var(--red-light)}
+    .hero-float-text{font-size:.7rem;color:var(--gray)}
+    .hero-float-value{font-size:.9rem;font-weight:700;color:var(--white)}
+
+    /* Differentials */
+    .differentials{padding:120px 0;background:var(--black-light)}
+    .diff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+    .diff-card{display:flex;align-items:center;gap:16px;padding:24px;border-radius:var(--radius);background:rgba(220,38,38,0.02);border:1px solid rgba(220,38,38,0.04);transition:var(--transition)}
+    .diff-card:hover{background:rgba(220,38,38,0.04);border-color:rgba(220,38,38,0.1);transform:translateX(4px)}
+    .diff-icon{width:44px;height:44px;border-radius:50%;background:rgba(220,38,38,0.08);display:flex;align-items:center;justify-content:center;color:var(--red-light);flex-shrink:0;transition:var(--transition)}
+    .diff-card:hover .diff-icon{background:var(--gradient-red);color:var(--white)}
+    .diff-card h4{font-size:.95rem;font-weight:700;margin-bottom:3px}
+    .diff-card p{font-size:.8rem;color:var(--gray);line-height:1.5}
+
+    /* Inventory */
+    .inventory{padding:120px 0}
+    .inventory-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
+    .car-card{border-radius:var(--radius-lg);overflow:hidden;background:var(--black-light);border:1px solid rgba(255,255,255,0.04);transition:var(--transition)}
+    .car-card:hover{transform:translateY(-8px);box-shadow:0 16px 40px rgba(0,0,0,0.5);border-color:rgba(220,38,38,0.1)}
+    .car-card-image{position:relative;aspect-ratio:16/10;overflow:hidden;background:linear-gradient(145deg,var(--black-mid),var(--black))}
+    .car-card-image-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;transition:var(--transition-slow)}
+    .car-card:hover .car-card-image-inner{transform:scale(1.05)}
+    .car-card-image-inner svg{width:44px;height:44px;color:var(--red);opacity:.15}
+    .car-card-image-inner span{font-size:.72rem;color:var(--gray);opacity:.35;font-weight:500;letter-spacing:.06em}
+    .car-card-image-tag{position:absolute;top:12px;right:12px;padding:5px 12px;border-radius:6px;background:var(--red);font-size:.72rem;font-weight:700;color:var(--white);opacity:.9}
+    .car-card-body{padding:20px}
+    .car-card-body h3{font-size:1.1rem;font-weight:700;margin-bottom:12px}
+    .car-card-meta{display:flex;gap:16px;margin-bottom:16px}
+    .car-card-meta span{font-size:.82rem;color:var(--gray)}
+    .car-card-meta span strong{color:var(--white);font-weight:600}
+    .car-card-divider{width:100%;height:1px;background:rgba(255,255,255,0.04);margin-bottom:16px}
+    .car-card-price{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    .car-card-price strong{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--red-light);font-weight:400}
+    .car-card-price a{padding:9px 18px;border-radius:6px;background:var(--gradient-red);color:var(--white);text-decoration:none;font-size:.82rem;font-weight:700;transition:var(--transition)}
+    .car-card-price a:hover{box-shadow:0 4px 16px rgba(220,38,38,0.4)}
+
+    /* Financing */
+    .financing{padding:120px 0;background:var(--black-light)}
+    .financing-grid{display:grid;gap:48px;align-items:center}
+    @media(min-width:768px){.financing-grid{grid-template-columns:1fr 1fr;gap:80px}}
+    .financing-form{background:var(--black-mid);padding:36px;border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,0.04)}
+    .financing-form h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;margin-bottom:24px;letter-spacing:.02em}
+    .form-row{display:grid;gap:16px;grid-template-columns:1fr 1fr;margin-bottom:16px}
+    @media(max-width:479px){.form-row{grid-template-columns:1fr}}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-group label{font-size:.82rem;font-weight:600;color:var(--white-dim)}
+    .form-group input,.form-group select{width:100%;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:var(--black);color:var(--white);font-size:.9rem;font-family:'Inter',sans-serif;transition:var(--transition);outline:none}
+    .form-group input:focus,.form-group select:focus{border-color:var(--red)}
+    .form-group select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+    .form-group select option{background:var(--black);color:var(--white)}
+    .financing-info h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,3.5vw,2.5rem);margin-bottom:20px;line-height:1.1}
+    .financing-info p{color:var(--gray);line-height:1.7;margin-bottom:24px;font-size:.95rem}
+    .financing-info-steps{display:flex;flex-direction:column;gap:18px}
+    .financing-step{display:flex;gap:16px;align-items:flex-start}
+    .financing-step-num{width:40px;height:40px;border-radius:50%;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.2);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--red-light);flex-shrink:0;font-size:.9rem}
+    .financing-step h4{font-size:.95rem;font-weight:700;margin-bottom:3px}
+    .financing-step p{font-size:.85rem;color:var(--gray);line-height:1.5;margin-bottom:0}
+
+    /* About + Gallery */
+    .about{padding:120px 0}
+    .about-grid{display:grid;gap:60px;align-items:center}
+    @media(min-width:768px){.about-grid{grid-template-columns:1fr 1fr;gap:80px}}
+    .about-visual{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .about-visual-item{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;background:linear-gradient(145deg,var(--black-light),var(--black-mid));border:1px solid rgba(220,38,38,0.04);display:flex;align-items:center;justify-content:center;transition:var(--transition)}
+    .about-visual-item:hover{transform:scale(1.03);border-color:rgba(220,38,38,0.12)}
+    .about-visual-item svg{width:36px;height:36px;color:var(--red);opacity:.2}
+    .about-visual-item:nth-child(3){grid-column:span 2;aspect-ratio:2/1}
+    .about h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:20px;line-height:1.1}
+    .about p{color:var(--gray);line-height:1.8;font-size:.95rem}
+    .about-quote{padding:20px 0 0;border-left:3px solid var(--red);padding-left:20px;margin-top:24px;color:var(--white-dim);font-size:.95rem;font-style:italic}
+
+    /* Testimonials */
+    .testimonials{padding:120px 0;background:var(--black-light);overflow:hidden}
+    .test-slider{position:relative;max-width:750px;margin:0 auto;overflow:hidden}
+    .test-track{display:flex;transition:transform .5s cubic-bezier(0.4,0,0.2,1)}
+    .test-card{flex:0 0 100%;padding:40px;border-radius:var(--radius-xl);background:var(--black);border:1px solid rgba(220,38,38,0.04)}
+    @media(min-width:768px){.test-card{padding:48px}}
+    .test-stars{display:flex;gap:3px;margin-bottom:20px}
+    .test-stars svg{width:18px;height:18px;fill:var(--red-light)}
+    .test-text{font-size:clamp(.95rem,1.8vw,1.1rem);line-height:1.8;color:rgba(255,255,255,0.8);margin-bottom:28px;font-style:italic}
+    .test-author{display:flex;align-items:center;gap:14px}
+    .test-avatar{width:48px;height:48px;border-radius:50%;background:var(--gradient-red);display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:.9rem}
+    .test-author strong{font-size:.95rem;display:block}
+    .test-author span{font-size:.82rem;color:var(--gray)}
+    .test-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:32px}
+    .test-nav-btn{width:42px;height:42px;border-radius:50%;border:1px solid rgba(220,38,38,0.1);background:transparent;color:var(--red-light);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--transition)}
+    .test-nav-btn:hover{background:rgba(220,38,38,0.04)}
+    .test-dots{display:flex;gap:6px}
+    .test-dot{width:8px;height:8px;border-radius:50%;background:var(--gray-darker);border:none;cursor:pointer;transition:var(--transition);padding:0}
+    .test-dot.active{background:var(--red);width:24px;border-radius:4px}
+
+    /* CTA */
+    .cta{position:relative;padding:120px 0;background:linear-gradient(135deg,var(--black-mid),var(--black));overflow:hidden}
+    .cta::before{content:'';position:absolute;top:50%;left:50%;width:500px;height:500px;border-radius:50%;background:rgba(220,38,38,0.04);filter:blur(80px);transform:translate(-50%,-50%)}
+    .cta-content{position:relative;z-index:2;text-align:center}
+    .cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:20px;line-height:1.1}
+    .cta p{font-size:1.05rem;color:var(--gray);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto}
+
+    /* Contact + Location */
+    .contact{padding:120px 0}
+    .contact-grid{display:grid;gap:40px;align-items:start}
+    @media(min-width:768px){.contact-grid{grid-template-columns:1fr 1fr;gap:60px}}
+    .contact-info h3{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;margin-bottom:24px;letter-spacing:.02em}
+    .contact-item{display:flex;gap:14px;margin-bottom:18px}
+    .contact-item-icon{width:44px;height:44px;border-radius:10px;background:rgba(220,38,38,0.08);display:flex;align-items:center;justify-content:center;color:var(--red-light);flex-shrink:0}
+    .contact-item h4{font-size:.95rem;font-weight:600;margin-bottom:2px}
+    .contact-item p{font-size:.85rem;color:var(--gray);line-height:1.5}
+    .map-wrapper{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(220,38,38,0.05)}
+    .map-wrapper iframe{width:100%;height:100%;border:0;filter:grayscale(0.7) contrast(1.1)}
+
+    /* Footer */
+    .footer{background:var(--black-light);border-top:1px solid rgba(220,38,38,0.04);padding:60px 0 0}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.03)}
+    @media(max-width:1023px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:639px){.footer-grid{grid-template-columns:1fr}}
+    .footer-brand p{font-size:.88rem;color:var(--gray);line-height:1.7;margin-top:14px;max-width:280px}
+    .footer h5{font-size:.75rem;font-weight:600;color:rgba(255,255,255,0.22);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+    .footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer ul a,.footer ul li{font-size:.88rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:var(--transition)}
+    .footer ul a:hover{color:var(--red-light)}
+    .social-links{display:flex;gap:10px}
+    .social-links a{width:42px;height:42px;border-radius:8px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);transition:var(--transition)}
+    .social-links a:hover{background:var(--gradient-red);color:var(--white)}
+    .footer-bottom{padding:24px 0;text-align:center}
+    .footer-bottom p{font-size:.8rem;color:rgba(255,255,255,0.12)}
+
+    /* WhatsApp Float */
+    .wa-float{position:fixed;bottom:24px;right:24px;width:62px;height:62px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;z-index:999;text-decoration:none;box-shadow:0 4px 24px rgba(37,211,102,0.35);transition:var(--transition)}
+    .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 32px rgba(37,211,102,0.5)}
+    .wa-pulse{position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(37,211,102,0.3);animation:waPulse 2s ease-out infinite}
+    @keyframes waPulse{0%{transform:scale(1);opacity:1}100%{transform:scale(1.4);opacity:0}}
+    .wa-float svg{width:30px;height:30px;fill:white}
+
+    /* Back to top */
+    .back-top{position:fixed;bottom:24px;right:100px;width:42px;height:42px;border-radius:50%;background:var(--gradient-red);display:flex;align-items:center;justify-content:center;color:var(--white);border:none;cursor:pointer;z-index:998;opacity:0;visibility:hidden;transform:translateY(20px);transition:var(--transition)}
+    .back-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+    .back-top:hover{transform:translateY(-3px)}
+
+    /* Scroll reveal */
+    [data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+    [data-reveal="left"]{transform:translateX(40px) translateY(0)}
+    [data-reveal].revealed{opacity:1;transform:translateY(0) translateX(0)}
+
+    /* Divider */
+    .divider{width:60px;height:2px;background:var(--gradient-red);margin:0 auto;border-radius:2px}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="logo">
+        <div class="logo-shield"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+        <span class="logo-text">TK<strong>CAETANO</strong></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#estoque">Estoque</a></li>
+        <li><a href="#simulacao">Simulação</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="https://wa.me/5562993669040?text=Olá! Tenho interesse em um veículo." class="nav-cta" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg"><div class="grid-lines"></div><div class="hero-orb hero-orb-1"></div><div class="hero-orb hero-orb-2"></div></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="hero-badge" data-reveal="up"><span class="dot"></span>Seminovos Premium</div>
+        <h1 data-reveal="up" data-delay="100">Seu próximo carro está na <span class="red-text">TK Caetano</span> Veículos</h1>
+        <p data-reveal="up" data-delay="200">Seminovos selecionados, procedência garantida e as melhores condições para você sair de carro novo.</p>
+        <div class="hero-buttons" data-reveal="up" data-delay="300">
+          <a href="https://wa.me/5562993669040?text=Olá! Quero saber mais sobre os veículos disponíveis." class="btn btn-red" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a href="#estoque" class="btn btn-outline">Ver Estoque</a>
+        </div>
+        <div class="hero-stats" data-reveal="up" data-delay="400">
+          <div><div class="hero-stat-num" data-count="350">0</div><div class="hero-stat-label">Veículos Vendidos/Ano</div></div>
+          <div class="hero-stat-div"></div>
+          <div><div class="hero-stat-num" data-count="8">0</div><div class="hero-stat-label">Anos de Mercado</div></div>
+          <div class="hero-stat-div"></div>
+          <div><div class="hero-stat-num" data-count="100">0</div><div class="hero-stat-label">% Aprovação</div></div>
+        </div>
+      </div>
+      <div class="hero-visual" data-reveal="left" data-delay="200">
+        <!-- IMAGEM: Inserir foto de veículo seminovo de destaque aqui -->
+        <div class="hero-car-placeholder">
+          <div class="hero-car-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 11l-2 4h18l-2-4M5 11l1.5-4h11l1.5 4M5 11h14M7 15h.01M14 15h.01M18 15h.01M6 19h12a2 2 0 002-2v-1H4v1a2 2 0 002 2z"/></svg>
+            <span>Foto do Veículo Destaque</span>
+          </div>
+        </div>
+        <div class="hero-float hero-float-1">
+          <div class="hero-float-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><div class="hero-float-text">Procedência</div><div class="hero-float-value">Garantida</div></div>
+        </div>
+        <div class="hero-float hero-float-2">
+          <div class="hero-float-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="hero-float-text">Aprovação de Crédito</div><div class="hero-float-value">em até 24h</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENTIALS -->
+  <section class="differentials" id="diferenciais">
+    <div class="container">
+      <div class="section-header" data-reveal="up">
+        <span class="section-tag">Por que nos escolher</span>
+        <h2>POR QUE A <span class="red-text">TK CAETANO?</span></h2>
+        <p>Confiança e qualidade em cada detalhe da sua compra.</p>
+      </div>
+      <div class="diff-grid">
+        <div class="diff-card" data-reveal="up" data-delay="0">
+          <div class="diff-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h4>Procedência Garantida</h4><p>Histórico completo de cada veículo, sem surpresas.</p></div>
+        </div>
+        <div class="diff-card" data-reveal="up" data-delay="60">
+          <div class="diff-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <div><h4>Veículos Revisados</h4><p>Inspeção de +80 itens antes da entrega.</p></div>
+        </div>
+        <div class="diff-card" data-reveal="up" data-delay="120">
+          <div class="diff-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 22 12 16 16 16 8"/></svg></div>
+          <div><h4>Financiamento Facilitado</h4><p>Parcelas que cabem no seu bolso, aprovação rápida.</p></div>
+        </div>
+        <div class="diff-card" data-reveal="up" data-delay="180">
+          <div class="diff-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+          <div><h4>Avaliação do Seu Usado</h4><p>Seu carro como parte do pagamento, avaliação justa.</p></div>
+        </div>
+        <div class="diff-card" data-reveal="up" data-delay="240">
+          <div class="diff-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div><h4>Atendimento Personalizado</h4><p>Consultor dedicado do início ao pós-venda.</p></div>
+        </div>
+        <div class="diff-card" data-reveal="up" data-delay="300">
+          <div class="diff-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><h4>Compra Segura</h4><p>Garantia de 90 dias nos principais componentes.</p></div>
+        </div>
+        <div class="diff-card" data-reveal="up" data-delay="360">
+          <div class="diff-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="1" width="22" height="22" rx="2" ry="2"/><line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/></svg></div>
+          <div><h4>Documentação Regularizada</h4><p>Toda papelada e transferência sob nossa responsabilidade.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVENTORY -->
+  <section class="inventory" id="estoque">
+    <div class="container">
+      <div class="section-header" data-reveal="up">
+        <span class="section-tag">Estoque</span>
+        <h2>SEMINOVOS <span class="red-text">EM DESTAQUE</span></h2>
+        <p>Selecionamos os melhores modelos para você. Clique no botão "Tenho Interesse" e fale direto com a gente.</p>
+      </div>
+      <div class="inventory-grid">
+        <!-- Car 1 -->
+        <div class="car-card" data-reveal="up" data-delay="0">
+          <div class="car-card-image">
+            <!-- IMAGEM: Chevrolet Onix Premier 2023 -->
+            <div class="car-card-image-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 11l-2 4h18l-2-4M5 11l1.5-4h11l1.5 4M5 11h14M7 15h.01M14 15h.01M18 15h.01M6 19h12a2 2 0 002-2v-1H4v1a2 2 0 002 2z"/></svg><span>Foto</span></div>
+            <div class="car-card-image-tag">-15%</div>
+          </div>
+          <div class="car-card-body">
+            <h3>Chevrolet Onix Premier</h3>
+            <div class="car-card-meta"><span>Ano: <strong>2023</strong></span><span>Km: <strong>32.000</strong></span></div>
+            <div class="car-card-divider"></div>
+            <div class="car-card-price"><strong>R$ 79.900</strong><a href="https://wa.me/5562993669040?text=Olá! Tenho interesse no Chevrolet Onix Premier 2023." target="_blank" rel="noopener">Tenho Interesse</a></div>
+          </div>
+        </div>
+        <!-- Car 2 -->
+        <div class="car-card" data-reveal="up" data-delay="70">
+          <div class="car-card-image">
+            <div class="car-card-image-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 11l-2 4h18l-2-4M5 11l1.5-4h11l1.5 4M5 11h14M7 15h.01M14 15h.01M18 15h.01M6 19h12a2 2 0 002-2v-1H4v1a2 2 0 002 2z"/></svg><span>Foto</span></div>
+            <div class="car-card-image-tag">-12%</div>
+          </div>
+          <div class="car-card-body">
+            <h3>Hyundai Creta Platinum</h3>
+            <div class="car-card-meta"><span>Ano: <strong>2023</strong></span><span>Km: <strong>18.500</strong></span></div>
+            <div class="car-card-divider"></div>
+            <div class="car-card-price"><strong>R$ 119.900</strong><a href="https://wa.me/5562993669040?text=Olá! Tenho interesse no Hyundai Creta Platinum 2023." target="_blank" rel="noopener">Tenho Interesse</a></div>
+          </div>
+        </div>
+        <!-- Car 3 -->
+        <div class="car-card" data-reveal="up" data-delay="140">
+          <div class="car-card-image">
+            <div class="car-card-image-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 11l-2 4h18l-2-4M5 11l1.5-4h11l1.5 4M5 11h14M7 15h.01M14 15h.01M18 15h.01M6 19h12a2 2 0 002-2v-1H4v1a2 2 0 002 2z"/></svg><span>Foto</span></div>
+          </div>
+          <div class="car-card-body">
+            <h3>Volkswagen T-Cross Highline</h3>
+            <div class="car-card-meta"><span>Ano: <strong>2022</strong></span><span>Km: <strong>45.000</strong></span></div>
+            <div class="car-card-divider"></div>
+            <div class="car-card-price"><strong>R$ 98.900</strong><a href="https://wa.me/5562993669040?text=Olá! Tenho interesse no Volkswagen T-Cross Highline 2022." target="_blank" rel="noopener">Tenho Interesse</a></div>
+          </div>
+        </div>
+        <!-- Car 4 -->
+        <div class="car-card" data-reveal="up" data-delay="210">
+          <div class="car-card-image">
+            <div class="car-card-image-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 11l-2 4h18l-2-4M5 11l1.5-4h11l1.5 4M5 11h14M7 15h.01M14 15h.01M18 15h.01M6 19h12a2 2 0 002-2v-1H4v1a2 2 0 002 2z"/></svg><span>Foto</span></div>
+            <div class="car-card-image-tag">-18%</div>
+          </div>
+          <div class="car-card-body">
+            <h3>Jeep Compass Longitude</h3>
+            <div class="car-card-meta"><span>Ano: <strong>2022</strong></span><span>Km: <strong>52.000</strong></span></div>
+            <div class="car-card-divider"></div>
+            <div class="car-card-price"><strong>R$ 134.900</strong><a href="https://wa.me/5562993669040?text=Olá! Tenho interesse no Jeep Compass Longitude 2022." target="_blank" rel="noopener">Tenho Interesse</a></div>
+          </div>
+        </div>
+        <!-- Car 5 -->
+        <div class="car-card" data-reveal="up" data-delay="280">
+          <div class="car-card-image">
+            <div class="car-card-image-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 11l-2 4h18l-2-4M5 11l1.5-4h11l1.5 4M5 11h14M7 15h.01M14 15h.01M18 15h.01M6 19h12a2 2 0 002-2v-1H4v1a2 2 0 002 2z"/></svg><span>Foto</span></div>
+          </div>
+          <div class="car-card-body">
+            <h3>Toyota Corolla XEi</h3>
+            <div class="car-card-meta"><span>Ano: <strong>2023</strong></span><span>Km: <strong>28.000</strong></span></div>
+            <div class="car-card-divider"></div>
+            <div class="car-card-price"><strong>R$ 139.900</strong><a href="https://wa.me/5562993669040?text=Olá! Tenho interesse no Toyota Corolla XEi 2023." target="_blank" rel="noopener">Tenho Interesse</a></div>
+          </div>
+        </div>
+        <!-- Car 6 -->
+        <div class="car-card" data-reveal="up" data-delay="350">
+          <div class="car-card-image">
+            <div class="car-card-image-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 11l-2 4h18l-2-4M5 11l1.5-4h11l1.5 4M5 11h14M7 15h.01M14 15h.01M18 15h.01M6 19h12a2 2 0 002-2v-1H4v1a2 2 0 002 2z"/></svg><span>Foto</span></div>
+          </div>
+          <div class="car-card-body">
+            <h3>Honda HR-V EXL</h3>
+            <div class="car-card-meta"><span>Ano: <strong>2022</strong></span><span>Km: <strong>38.000</strong></span></div>
+            <div class="car-card-divider"></div>
+            <div class="car-card-price"><strong>R$ 125.900</strong><a href="https://wa.me/5562993669040?text=Olá! Tenho interesse no Honda HR-V EXL 2022." target="_blank" rel="noopener">Tenho Interesse</a></div>
+          </div>
+        </div>
+        <!-- Car 7 -->
+        <div class="car-card" data-reveal="up" data-delay="420">
+          <div class="car-card-image">
+            <div class="car-card-image-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 11l-2 4h18l-2-4M5 11l1.5-4h11l1.5 4M5 11h14M7 15h.01M14 15h.01M18 15h.01M6 19h12a2 2 0 002-2v-1H4v1a2 2 0 002 2z"/></svg><span>Foto</span></div>
+            <div class="car-card-image-tag">-10%</div>
+          </div>
+          <div class="car-card-body">
+            <h3>Fiat Fastback Limited</h3>
+            <div class="car-card-meta"><span>Ano: <strong>2023</strong></span><span>Km: <strong>15.000</strong></span></div>
+            <div class="car-card-divider"></div>
+            <div class="car-card-price"><strong>R$ 129.900</strong><a href="https://wa.me/5562993669040?text=Olá! Tenho interesse no Fiat Fastback Limited 2023." target="_blank" rel="noopener">Tenho Interesse</a></div>
+          </div>
+        </div>
+        <!-- Car 8 -->
+        <div class="car-card" data-reveal="up" data-delay="490">
+          <div class="car-card-image">
+            <div class="car-card-image-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 11l-2 4h18l-2-4M5 11l1.5-4h11l1.5 4M5 11h14M7 15h.01M14 15h.01M18 15h.01M6 19h12a2 2 0 002-2v-1H4v1a2 2 0 002 2z"/></svg><span>Foto</span></div>
+          </div>
+          <div class="car-card-body">
+            <h3>Chevrolet Tracker Premier</h3>
+            <div class="car-card-meta"><span>Ano: <strong>2022</strong></span><span>Km: <strong>41.000</strong></span></div>
+            <div class="car-card-divider"></div>
+            <div class="car-card-price"><strong>R$ 115.900</strong><a href="https://wa.me/5562993669040?text=Olá! Tenho interesse no Chevrolet Tracker Premier 2022." target="_blank" rel="noopener">Tenho Interesse</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCING -->
+  <section class="financing" id="simulacao">
+    <div class="container">
+      <div class="financing-grid">
+        <div class="financing-info" data-reveal="up">
+          <span class="section-tag">Simulação</span>
+          <h2>SIMULE SEU <span class="red-text">FINANCIAMENTO</span> EM 3 PASSOS</h2>
+          <p>Preencha os dados ao lado e nossa equipe retorna com as melhores condições em até 2 horas.</p>
+          <div class="financing-info-steps">
+            <div class="financing-step"><div class="financing-step-num">1</div><div><h4>Escolha o veículo</h4><p>Selecione o seminovo que mais combina com você no nosso estoque.</p></div></div>
+            <div class="financing-step"><div class="financing-step-num">2</div><div><h4>Informe sua entrada</h4><p>Entrada a partir de 20% do valor do veículo. Condições especiais.</p></div></div>
+            <div class="financing-step"><div class="financing-step-num">3</div><div><h4>Receba sua simulação</h4><p>Nossa equipe monta a proposta ideal e envia direto no seu WhatsApp.</p></div></div>
+          </div>
+        </div>
+        <div class="financing-form" data-reveal="up" data-delay="150" id="formFinancing">
+          <h3>Solicitar <span class="red-text">Simulação</span></h3>
+          <form id="financingForm" onsubmit="handleFinancing(event)">
+            <div class="form-group" style="margin-bottom:16px">
+              <label for="name">Nome completo</label>
+              <input type="text" id="name" placeholder="Seu nome" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="whatsapp">WhatsApp</label>
+                <input type="tel" id="whatsapp" placeholder="(62) 99999-9999" required>
+              </div>
+              <div class="form-group">
+                <label for="entry">Valor de entrada (R$)</label>
+                <input type="text" id="entry" placeholder="Ex: 20.000" required>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom:24px">
+              <label for="vehicle">Veículo desejado</label>
+              <select id="vehicle" required>
+                <option value="">Selecione o veículo</option>
+                <option value="Chevrolet Onix Premier 2023">Chevrolet Onix Premier 2023</option>
+                <option value="Hyundai Creta Platinum 2023">Hyundai Creta Platinum 2023</option>
+                <option value="Volkswagen T-Cross Highline 2022">Volkswagen T-Cross Highline 2022</option>
+                <option value="Jeep Compass Longitude 2022">Jeep Compass Longitude 2022</option>
+                <option value="Toyota Corolla XEi 2023">Toyota Corolla XEi 2023</option>
+                <option value="Honda HR-V EXL 2022">Honda HR-V EXL 2022</option>
+                <option value="Fiat Fastback Limited 2023">Fiat Fastback Limited 2023</option>
+                <option value="Chevrolet Tracker Premier 2022">Chevrolet Tracker Premier 2022</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-red" style="width:100%">Solicitar Simulação</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + GALLERY -->
+  <section class="about" id="sobre">
+    <div class="container">
+      <div class="section-header" data-reveal="up">
+        <span class="section-tag">Sobre Nós</span>
+        <h2>SOBRE A <span class="red-text">TK CAETANO</span></h2>
+        <p>Uma história construída com transparência, qualidade e respeito pelo cliente.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual" data-reveal="left">
+          <!-- IMAGEM: Showroom da loja -->
+          <div class="about-visual-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+          <!-- IMAGEM: Carros no showroom -->
+          <div class="about-visual-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 11l-2 4h18l-2-4M5 11l1.5-4h11l1.5 4M5 11h14M7 15h.01M14 15h.01M18 15h.01M6 19h12a2 2 0 002-2v-1H4v1a2 2 0 002 2z"/></svg></div>
+          <!-- IMAGEM: Panorâmica do showroom -->
+          <div class="about-visual-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/></svg></div>
+        </div>
+        <div data-reveal="up">
+          <h2>Confiança que <span class="red-text">move pessoas.</span></h2>
+          <p>Na <strong>TK Caetano Veículos</strong>, trabalhamos com transparência, qualidade e compromisso. Selecionamos cuidadosamente cada veículo para oferecer aos nossos clientes segurança, procedência e excelentes oportunidades de negócio.</p>
+          <p>Há 8 anos no mercado, já ajudamos centenas de famílias a realizar o sonho do carro próprio. Cada cliente que sai satisfeito é a prova do nosso compromisso com a excelência.</p>
+          <div class="about-quote">"Não vendemos apenas carros — construímos relações de confiança que duram a vida inteira."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="depoimentos">
+    <div class="container">
+      <div class="section-header" data-reveal="up">
+        <span class="section-tag">Depoimentos</span>
+        <h2>QUEM COMPROU, <span class="red-text">APROVOU</span></h2>
+        <p>A satisfação dos nossos clientes é o nosso melhor cartão de visita.</p>
+      </div>
+      <div class="test-slider" data-reveal="up" data-delay="200">
+        <div class="test-track" id="testTrack">
+          <div class="test-card">
+            <div class="test-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <p class="test-text">"Comprei meu Corolla na TK Caetano e foi a melhor experiência de compra que já tive. Carro impecável, documentação toda certinha e o Caetano ainda me ajudou com o financiamento. Super recomendo!"</p>
+            <div class="test-author"><div class="test-avatar">JM</div><div><strong>João Mendes</strong><span>Comprou um Corolla XEi 2023</span></div></div>
+          </div>
+          <div class="test-card">
+            <div class="test-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <p class="test-text">"Deixei meu carro antigo como entrada e saí de Compass zero praticamente no mesmo dia. Atendimento nota 10, o carro estava melhor do que nas fotos. Já indiquei pra toda família."</p>
+            <div class="test-author"><div class="test-avatar">LS</div><div><strong>Luciana Silva</strong><span>Comprou um Jeep Compass Longitude 2022</span></div></div>
+          </div>
+          <div class="test-card">
+            <div class="test-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <p class="test-text">"Peguei um T-Cross na TK Caetano com garantia de 90 dias. Tive uma pequena dúvida com o multimídia e o pós-venda resolveu na hora. Compromisso de verdade com o cliente. Valeu demais!"</p>
+            <div class="test-author"><div class="test-avatar">RP</div><div><strong>Rafael Pereira</strong><span>Comprou um Volkswagen T-Cross 2022</span></div></div>
+          </div>
+        </div>
+        <div class="test-nav">
+          <button class="test-nav-btn" id="prevTest" aria-label="Anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <div class="test-dots" id="testDots"></div>
+          <button class="test-nav-btn" id="nextTest" aria-label="Próximo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="cta">
+    <div class="container cta-content" data-reveal="up">
+      <h2>SEU CARRO DOS SONHOS ESTÁ <span class="red-text">AQUI.</span></h2>
+      <p>Fale com a gente agora pelo WhatsApp e venha conhecer de perto o seminovo perfeito para você.</p>
+      <a href="https://wa.me/5562993669040?text=Olá! Quero conhecer os veículos da TK Caetano!" class="btn btn-wa" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar no WhatsApp Agora
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contato">
+    <div class="container">
+      <div class="section-header" data-reveal="up">
+        <span class="section-tag">Contato</span>
+        <h2>VENHA NOS <span class="red-text">VISITAR</span></h2>
+        <p>Estamos prontos para te atender da melhor forma possível.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" data-reveal="up">
+          <h3>Fale conosco</h3>
+          <div class="contact-item">
+            <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <div><h4>WhatsApp</h4><p>+55 62 99366-9040</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><h4>E-mail</h4><p>contato@tkcaetanoveiculos.com.br</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div><h4>Horário de Atendimento</h4><p>Seg a Sex: 08h às 18h<br>Sáb: 08h às 14h</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><h4>Endereço</h4><p>Av. Goiás, 3200 — Setor Central<br>Goiânia, GO — CEP 74000-000</p></div>
+          </div>
+        </div>
+        <div class="map-wrapper" data-reveal="up" data-delay="150">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.5!2d-49.25!3d-16.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDQxJzI0LjAiUyA0OcKwMTUnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-shield"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+            <span class="logo-text">TK<strong>CAETANO</strong></span>
+          </a>
+          <p>Seminovos de qualidade com procedência garantida. Sua confiança é o nosso combustível.</p>
+        </div>
+        <div><h5>Navegação</h5><ul><li><a href="#inicio">Início</a></li><li><a href="#estoque">Estoque</a></li><li><a href="#simulacao">Simulação</a></li><li><a href="#depoimentos">Depoimentos</a></li></ul></div>
+        <div><h5>Atendimento</h5><ul><li>Seg a Sex: 08h-18h</li><li>Sáb: 08h-14h</li><li>+55 62 99366-9040</li></ul></div>
+        <div>
+          <h5>Redes Sociais</h5>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://wa.me/5562993669040" aria-label="WhatsApp" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 TK Caetano Veículos LTDA — Todos os direitos reservados.</p></div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5562993669040?text=Olá! Vim pelo site da TK Caetano Veículos." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <div class="wa-pulse"></div>
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Voltar ao topo">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script>
+  (function(){
+    'use strict';
+    var navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',function(){navbar.classList.toggle('scrolled',window.scrollY>80)},{passive:true});
+
+    var menuToggle=document.getElementById('menuToggle');
+    var navLinks=document.getElementById('navLinks');
+    menuToggle.addEventListener('click',function(){menuToggle.classList.toggle('active');navLinks.classList.toggle('open')});
+    navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menuToggle.classList.remove('active');navLinks.classList.remove('open')})});
+
+    var revealEls=document.querySelectorAll('[data-reveal]');
+    function revealOnScroll(){
+      var wh=window.innerHeight;
+      revealEls.forEach(function(el){var r=el.getBoundingClientRect();var d=parseInt(el.dataset.delay||0,10);if(r.top<wh-50){setTimeout(function(){el.classList.add('revealed')},d)}});
+    }
+    window.addEventListener('scroll',revealOnScroll,{passive:true});window.addEventListener('load',revealOnScroll);revealOnScroll();
+
+    var counters=document.querySelectorAll('.hero-stat-num');var countersAnimated=false;
+    function animateCounters(){
+      if(countersAnimated)return;
+      var sec=document.querySelector('.hero-stats');if(!sec)return;
+      if(sec.getBoundingClientRect().top<window.innerHeight-40){
+        countersAnimated=true;
+        counters.forEach(function(c){
+          var target=parseInt(c.dataset.count,10);var dur=2200,start=null;
+          function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);var e=1-Math.pow(1-p,3);var val=Math.floor(e*target);c.textContent=val.toLocaleString('pt-BR');if(p<1)requestAnimationFrame(step);else c.textContent=target.toLocaleString('pt-BR')}
+          requestAnimationFrame(step);
+        });
+      }
+    }
+    window.addEventListener('scroll',animateCounters,{passive:true});animateCounters();
+
+    var track=document.getElementById('testTrack'),dots=document.getElementById('testDots');
+    var prev=document.getElementById('prevTest'),next=document.getElementById('nextTest');
+    var cards=track?track.querySelectorAll('.test-card'):[];var slide=0,total=cards.length,autoInt;
+    function buildDots(){
+      if(!dots)return;dots.innerHTML='';
+      for(var i=0;i<total;i++){var d=document.createElement('button');d.className='test-dot'+(i===slide?' active':'');d.dataset.i=i;d.addEventListener('click',function(){goTo(+this.dataset.i)});dots.appendChild(d)}
+    }
+    function goTo(i){slide=i;if(slide<0)slide=total-1;if(slide>=total)slide=0;track.style.transform='translateX('+(-slide*100)+'%)';dots.querySelectorAll('.test-dot').forEach(function(d,j){d.classList.toggle('active',j===slide)})}
+    buildDots();prev.addEventListener('click',function(){goTo(slide-1);resetAuto()});next.addEventListener('click',function(){goTo(slide+1);resetAuto()});
+    function startAuto(){autoInt=setInterval(function(){goTo(slide+1)},5000)}function resetAuto(){clearInterval(autoInt);startAuto()}startAuto();
+    var tx=0;track.addEventListener('touchstart',function(e){tx=e.changedTouches[0].screenX},{passive:true});
+    track.addEventListener('touchend',function(e){var diff=tx-e.changedTouches[0].screenX;if(Math.abs(diff)>50){goTo(diff>0?slide+1:slide-1);resetAuto()}},{passive:true});
+
+    var backTop=document.getElementById('backTop');
+    window.addEventListener('scroll',function(){backTop.classList.toggle('visible',window.scrollY>600)},{passive:true});
+    backTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=this.getAttribute('href');if(id==='#')return;var el=document.querySelector(id);if(el){e.preventDefault();window.scrollTo({top:el.offsetTop-80,behavior:'smooth'})}})});
+  })();
+
+  function handleFinancing(e){
+    e.preventDefault();
+    var name=document.getElementById('name').value.trim();
+    var whatsapp=document.getElementById('whatsapp').value.trim();
+    var vehicle=document.getElementById('vehicle').value.trim();
+    var entry=document.getElementById('entry').value.trim();
+    var msg='Olá! Gostaria de solicitar uma simulação de financiamento: Nome: '+name+' WhatsApp: '+whatsapp+' Veículo: '+vehicle+' Entrada: R$ '+entry;
+    window.open('https://wa.me/5562993669040?text='+encodeURIComponent(msg),'_blank');
+  }
+  </script>
+</body>
+</html>
